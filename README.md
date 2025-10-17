@@ -165,12 +165,12 @@ Akses aplikasi di browser: `http://localhost:5173`
 
 ## 🔐 Default Login
 
+untuk login bisa copy teks di bawah button submit nyaa
 ```
-Username: admin
-Password: password
+Username: manager
+Password: manager321
 ```
 
-*Note: Sesuaikan dengan konfigurasi backend Anda*
 
 ## 📝 Development Workflow
 
@@ -208,48 +208,6 @@ npm run build
 npm run preview
 ```
 
-## 🚀 Deployment
-
-### Backend (Heroku)
-```bash
-cd backend_taskManager
-heroku create task-tracker-api
-heroku addons:create heroku-postgresql:hobby-dev
-git subtree push --prefix backend_taskManager heroku main
-heroku run npx prisma migrate deploy
-```
-
-### Frontend (Vercel)
-```bash
-cd frontend_taskManager
-vercel deploy
-```
-
-## 🐛 Troubleshooting
-
-### Backend tidak connect ke database
-```bash
-# Check PostgreSQL status
-sudo service postgresql status
-
-# Test connection
-psql -U username -d tasktracker_db
-```
-
-### Frontend error CORS
-Pastikan backend sudah enable CORS:
-```javascript
-app.use(cors())
-```
-
-### Port sudah digunakan
-```bash
-# Kill process di port 3000
-lsof -ti:3000 | xargs kill -9
-
-# Kill process di port 5173
-lsof -ti:5173 | xargs kill -9
-```
 
 ## 📚 Dokumentasi Lengkap
 
@@ -266,8 +224,7 @@ lsof -ti:5173 | xargs kill -9
   - Build configuration
 ---
 
-## 📖 Panduan Lengkap untuk Clone & Setup
-
+ 
 ### Untuk Pengguna Baru:
 
 1. **Clone repository:**
