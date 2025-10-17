@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model ProgresTeam {
+  id               String     @id @default(uuid())
+  penanggung_jawab String     // untuk nama anggota team 
+  task             String     // untuk nama task yang di kerjakan
+  tanggalMulai     DateTime   // untuk mencatatat tanggal mulai pengerajaan task
+  tanggalDeadline  DateTime   // untuk batas maksimal mengejarkan task nya
+  tanggalSelesai   DateTime?   // untuk mencatatat tanggal selesai pengerajaan task
+  status           String     // untuk mencatat status pengerjaan task
+  detail_aktivitas String?    // untuk mencatat detail task
+  createdAt        DateTime   @default(now()) // untuk mencatat waktu task di creted
+  updatedAt        DateTime   @updatedAt // jika status selesai makak date updateAt akan di simpan di tanggalSelesai
+}
+
+model TaskLog {
+  id                String     @id @default(uuid())
+  task              String      // untuk mencatat task yang dikerjakan ( ambil dari model progress)
+  tanggal           DateTime   // untuk mencatat tanggal pembuatan ( ambil dari model progress)
+  detail_aktivitas  String      // untuk mencatat detail task ( ambil dari model progress)
+  tanggalSelesai    DateTime   // untuk mencatat tanggal selesai ( ambil dari model progress)
+  status            String     // untuk mencatat status pengerjaan task ( ambil dari model progress)
+
+}

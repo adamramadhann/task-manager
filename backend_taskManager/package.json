@@ -1,0 +1,32 @@
+{
+  "name": "backend_taskmanager",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "server.js",
+"scripts": {
+  "dev": "nodemon --exec babel-node ./src/server.js",
+  "build": "babel src -d dist",
+  "start": "node dist/server.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.17.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.17.1",
+    "ts-node-dev": "^2.0.0"
+  }
+}
